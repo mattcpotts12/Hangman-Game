@@ -62,15 +62,7 @@ function updateDisplay(gameWord, guesses){
 }
 
 
-
-
-
-
 updateDisplay(gameWord, guesses, GuessesCount);
-
-
-
-
 
 
 //receiving a letter from the user
@@ -94,11 +86,11 @@ document.onkeyup = function(event){
     else if(guessNew){
         guesses.push(key);
         correctCount++;
-    }
-    if ((guessCount - GuessesCount.length) == gameWord.length) {
-        winCounter++;
-        alert("YOU WIN!");
-        resetHM();
+            if (correctCount == gameWord.length) {
+                winCounter++;
+                alert("YOU WIN!");
+                resetHM();      
+            }
     }
   	if (GuessesCount < 1){
   		alert("YOU LOSE! PRESS OK TO TRY AGAIN");
